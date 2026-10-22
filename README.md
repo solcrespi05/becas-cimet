@@ -9,11 +9,9 @@ Plugin de [Claude Code](https://claude.com/claude-code) para encontrar becas, fe
 En Claude Code (terminal o app de escritorio):
 
 ```
-/plugin marketplace add <usuario-u-org>/becas-infant
+/plugin marketplace add solcrespi05/becas-cimet
 /plugin install becas@infant-becas
 ```
-
-Reemplazá `<usuario-u-org>` por la cuenta de GitHub donde esté publicado este repo.
 
 ## Uso
 
