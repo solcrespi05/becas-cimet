@@ -1,0 +1,17 @@
+{
+  "name": "infant-becas",
+  "owner": {
+    "name": "Centro INFANT de Medicina Traslacional"
+  },
+  "metadata": {
+    "description": "Herramientas para encontrar y preparar becas, fellowships y grants (nacionales e internacionales) para pediatras, bioquímicos, matemáticos y científicos de datos."
+  },
+  "plugins": [
+    {
+      "name": "becas",
+      "source": "./plugins/becas",
+      "description": "Busca becas y grants según tu rol y sector, evalúa si calificás y prepara la postulación. Nunca envía nada.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# Si alguien usa la raíz del repo como carpeta de trabajo, sus datos personales no se suben.
+/perfil/
+/convocatorias/
+/CLAUDE.local.md
+.DS_Store
+Thumbs.db
