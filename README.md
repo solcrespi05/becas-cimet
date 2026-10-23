@@ -1,4 +1,4 @@
-# Herramientas de investigación — Centro INFANT de Medicina Traslacional
+# Herramientas de investigación — CIMET
 
 Dos plugins de [Claude Code](https://claude.com/claude-code) para pediatras, bioquímicos, matemáticos y científicos de datos:
 
@@ -13,8 +13,8 @@ En Claude Code (terminal o app de escritorio):
 
 ```
 /plugin marketplace add solcrespi05/becas-cimet
-/plugin install becas@infant-becas
-/plugin install pub@infant-becas
+/plugin install becas@cimet
+/plugin install pub@cimet
 ```
 
 Instalá uno o los dos.
@@ -115,6 +115,6 @@ Hoy los resultados salen en Markdown para copiar a Word (o a .docx con `pandoc` 
 - **becas, fuentes por sector:** `plugins/becas/skills/buscar/fuentes/`. Agregar o sacar programas es editar una línea.
 - **pub, recursos:** `plugins/pub/recursos/` (reglas, APIs de literatura, guías de reporte, conversor de Word).
 - **Agentes:** `plugins/<plugin>/agents/`. **Skills:** `plugins/<plugin>/skills/<nombre>/SKILL.md`.
-- Al cambiar algo, subí `version` en `plugins/<plugin>/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`. Los colegas actualizan con `/plugin marketplace update infant-becas`.
+- Al cambiar algo, subí `version` en `plugins/<plugin>/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`. Los colegas actualizan con `/plugin marketplace update cimet`.
 
 Los datos de cada investigador quedan en su computadora, nunca en este repo.

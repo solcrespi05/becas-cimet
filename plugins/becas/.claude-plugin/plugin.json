@@ -1,9 +1,9 @@
 {
   "name": "becas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Busca becas, fellowships y grants según tu rol y sector (pediatría, bioquímica, matemática, ciencia de datos), evalúa elegibilidad y prepara postulaciones individuales y de grupo. Nunca envía nada.",
   "author": {
-    "name": "Centro INFANT de Medicina Traslacional"
+    "name": "CIMET"
   },
   "keywords": ["becas", "grants", "fellowships", "investigación", "salud"]
 }

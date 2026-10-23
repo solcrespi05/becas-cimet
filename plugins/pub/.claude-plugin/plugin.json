@@ -1,9 +1,9 @@
 {
   "name": "pub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ayudante de escritura académica: escribe y mejora secciones de papers y abstracts, busca y verifica referencias reales (PubMed, Crossref) para Zotero, y revisa manuscritos (revista, guía de reporte, estructura, estadística, revisor par). Nunca envía nada.",
   "author": {
-    "name": "Centro INFANT de Medicina Traslacional"
+    "name": "CIMET"
   },
   "keywords": ["escritura científica", "papers", "abstracts", "referencias", "zotero", "pubmed"]
 }

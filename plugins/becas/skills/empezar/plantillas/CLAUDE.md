@@ -1,6 +1,6 @@
 # Mis becas y grants
 
-Carpeta de trabajo del plugin `becas` (Centro INFANT de Medicina Traslacional). Claude busca convocatorias y prepara postulaciones; **la persona envía todo**.
+Carpeta de trabajo del plugin `becas` (CIMET). Claude busca convocatorias y prepara postulaciones; **la persona envía todo**.
 
 ## Estructura
 

@@ -1,6 +1,6 @@
 # Escritura académica
 
-Carpeta de trabajo del plugin `pub` (Centro INFANT de Medicina Traslacional). Claude ayuda a escribir, buscar referencias y revisar; **los autores deciden y envían**.
+Carpeta de trabajo del plugin `pub` (CIMET). Claude ayuda a escribir, buscar referencias y revisar; **los autores deciden y envían**.
 
 ## Estructura
 

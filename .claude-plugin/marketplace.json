@@ -1,7 +1,7 @@
 {
-  "name": "infant-becas",
+  "name": "cimet",
   "owner": {
-    "name": "Centro INFANT de Medicina Traslacional"
+    "name": "CIMET"
   },
   "metadata": {
     "description": "Herramientas para investigadores (pediatras, bioquímicos, matemáticos y científicos de datos): becas y grants, y escritura académica."
@@ -11,13 +11,13 @@
       "name": "becas",
       "source": "./plugins/becas",
       "description": "Busca becas y grants según tu rol y sector, evalúa si calificás y prepara la postulación. Nunca envía nada.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "name": "pub",
       "source": "./plugins/pub",
       "description": "Ayudante de escritura académica: escribe y pule papers y abstracts, busca referencias verificadas para Zotero y revisa manuscritos antes de enviarlos.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }
