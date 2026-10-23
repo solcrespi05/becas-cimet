@@ -1,8 +1,11 @@
-# Becas y grants — Centro INFANT de Medicina Traslacional
+# Herramientas de investigación — Centro INFANT de Medicina Traslacional
 
-Plugin de [Claude Code](https://claude.com/claude-code) para encontrar becas, fellowships y grants (nacionales e internacionales) según tu rol y sector: pediatría, bioquímica, matemática y ciencia de datos. Sirve para becas individuales y para grants de grupo.
+Dos plugins de [Claude Code](https://claude.com/claude-code) para pediatras, bioquímicos, matemáticos y científicos de datos:
 
-**Claude busca y prepara; vos enviás.** Nada se manda, ni se sube, ni se registra en ningún portal sin vos.
+- **`becas`**: encuentra becas, fellowships y grants (nacionales e internacionales) según tu rol y sector, evalúa si calificás y prepara la postulación.
+- **`pub`**: ayudante de escritura académica. Escribe y pule papers y abstracts, busca referencias reales y verificadas para Zotero, y revisa el manuscrito antes de enviarlo.
+
+**Claude ayuda y prepara; ustedes deciden y envían.** Nada se manda, ni se sube, ni se registra en ningún portal.
 
 ## Instalación (una sola vez)
 
@@ -11,9 +14,14 @@ En Claude Code (terminal o app de escritorio):
 ```
 /plugin marketplace add solcrespi05/becas-cimet
 /plugin install becas@infant-becas
+/plugin install pub@infant-becas
 ```
 
-## Uso
+Instalá uno o los dos.
+
+---
+
+## `becas`: becas y grants
 
 1. Creá una carpeta para tus becas (ej. `Documentos/mis-becas`) y abrí Claude Code ahí.
 2. Escribí:
@@ -25,11 +33,9 @@ En Claude Code (terminal o app de escritorio):
 | `/becas:evaluar <link>` | ¿Califico? Lee las bases reales y arma la lista de documentos y fechas. |
 | `/becas:postular <id>` | Prepara CV, cartas, propuesta, mails a referentes. Todo queda en `convocatorias/<id>/final/`. |
 | `/becas:estado` | Qué cierra pronto, qué te falta, qué enviaste. |
-| `/becas:actualizar <id> <qué pasó>` | "enviada", "entrevista", "aceptada", "rechazada". También podés decirlo con tus palabras: "ya envié la de EMBO". |
+| `/becas:actualizar <id> <qué pasó>` | "enviada", "entrevista", "aceptada", "rechazada". También con tus palabras: "ya envié la de EMBO". |
 
-No hace falta explicar nada más: tu perfil queda guardado y las skills lo leen solas.
-
-## Qué queda en tu carpeta
+### Qué queda en tu carpeta
 
 ```
 mis-becas/
@@ -47,24 +53,68 @@ mis-becas/
     └── <id>/                 bases, checklist, borradores, final
 ```
 
-Tus datos quedan en tu computadora, no en este repo.
+**`institucion.md`, completarlo una vez entre todos:** los grants de grupo e internacionales piden datos del Centro (nombre legal, registros NIH/SAM, PIC europeo, comité de ética, quién firma avales). Conviene que la oficina de proyectos lo complete una vez y lo comparta.
 
-## `institucion.md`: completarlo una vez entre todos
+---
 
-Los grants de grupo e internacionales piden datos del Centro (nombre legal, registros NIH/SAM, PIC europeo, comité de ética, quién firma avales). Conviene que una persona de la oficina de proyectos lo complete una vez y lo comparta. Cada colega lo pega en su `perfil/institucion.md`.
+## `pub`: escritura académica
 
-## Reglas que siguen todas las skills
+Abrí Claude Code en una carpeta de trabajo (ej. `Documentos/escritura`) y escribí el comando. Podés **adjuntar el Word (.docx)**, un PDF o **pegar el texto**: se acepta todo.
 
-1. No inventan logros, publicaciones, cifras ni resultados: todo sale de tu `perfil/`. Si falta algo, aparece `[FALTA: ...]` y te preguntan.
-2. No envían nada.
-3. Citan la fuente (link + fecha) de cada requisito y fecha de cierre.
-4. Escriben en el idioma de la convocatoria y respetan límites con margen (≤95%).
-5. Nunca copian datos identificables de pacientes.
+| Comando | Qué hace |
+|---|---|
+| `/pub:escribir <sección>` | El ayudante principal: escribe o mejora introducción, métodos, resultados, discusión, a partir de tus notas o borrador, y busca las referencias que hagan falta. |
+| `/pub:referencias <tema o frase>` | Busca bibliografía real (PubMed, Europe PMC, Crossref, Semantic Scholar), lee los abstracts y te la deja lista para Zotero. Con `verificar` chequea tu lista de referencias. |
+| `/pub:abstract <revista o congreso>` | Abstract con la estructura y el límite exactos, con los números idénticos a los del manuscrito. |
+| `/pub:pulir` | Corrige el inglés (o castellano) sin cambiar el contenido y te explica los cambios. |
+| `/pub:revisar <revista>` | Revisión completa antes de enviar: requisitos de la revista, guía de reporte (CONSORT, STROBE, TRIPOD+AI…), estructura, estadística, referencias y un revisor par simulado. |
+| `/pub:responder` | Pegás los comentarios de los revisores y arma la respuesta punto por punto y los cambios al manuscrito. |
+| `/pub:carta <revista>` | Cover letter al editor. |
 
-## Mantener el plugin
+### Referencias a Zotero
 
-- **Fuentes por sector:** `plugins/becas/skills/buscar/fuentes/` (`general.md`, `pediatria.md`, `bioquimica.md`, `datos-matematica.md`, `grupos.md`). Agregar o sacar programas es editar una línea. Cuando el buscador detecta una fuente discontinuada, lo avisa.
-- **Agentes:** `plugins/becas/agents/` (scout, evaluador, extractor-requisitos, redactor-cv, redactor-cartas, revisor, coordinador-referencias).
-- **Skills:** `plugins/becas/skills/<nombre>/SKILL.md`.
-- **Plantillas de la carpeta de trabajo:** `plugins/becas/skills/empezar/plantillas/`.
-- Al cambiar algo, subí `version` en `plugins/becas/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`. Los colegas actualizan con `/plugin marketplace update infant-becas`.
+Cada búsqueda deja en `manuscritos/<id>/referencias/`:
+- `dois.txt` → en Zotero, botón de varita mágica (**Agregar elemento por identificador**) y pegás todo.
+- `refs.bib` → o **Archivo → Importar**.
+- `fichas.md` → qué dice cada referencia y para qué frase sirve.
+
+Después las insertás en Word con el complemento de Zotero, en el estilo de la revista (`revista.md` te dice cuál elegir).
+
+### Reglas que siguen todos los agentes de `pub`
+
+1. **Los datos no se tocan**: ningún número, n, valor p, IC ni conclusión se crea o se cambia.
+2. **Ninguna referencia sin verificar**: toda cita existe en PubMed/Crossref, tiene DOI o PMID comprobado y respalda lo que se afirma. Si no hay, queda `[CITA: ...]`.
+3. **No exagerar**: el lenguaje respeta el diseño (observacional → "se asoció con").
+4. **Confidencialidad**: el manuscrito no se sube a otros servicios; las búsquedas usan términos generales. Nunca datos identificables de pacientes.
+5. **Cambios visibles**: todo lo que se reescribe se explica.
+6. Si la revista pide declarar el uso de IA, se prepara un borrador de declaración para que los autores decidan.
+
+### Qué queda en tu carpeta
+
+```
+escritura/
+├── CLAUDE.md
+├── perfil/grupo.md           (opcional) líneas, publicaciones y revistas del grupo
+└── manuscritos/<id>/
+    ├── original/             tu Word, tablas, comentarios de revisores (no se modifican)
+    ├── manuscrito.md         texto vigente
+    ├── notas.md              pregunta, diseño, mensaje principal, revista
+    ├── revista.md            requisitos reales de la revista
+    ├── referencias/          refs.bib · dois.txt · fichas.md
+    ├── borradores/           versiones, nunca se pisan
+    ├── revision/             informes de cada revisor
+    └── final/
+```
+
+Hoy los resultados salen en Markdown para copiar a Word (o a .docx con `pandoc` si está instalado). **Próxima versión:** devolver el Word con control de cambios y comentarios.
+
+---
+
+## Mantener los plugins
+
+- **becas, fuentes por sector:** `plugins/becas/skills/buscar/fuentes/`. Agregar o sacar programas es editar una línea.
+- **pub, recursos:** `plugins/pub/recursos/` (reglas, APIs de literatura, guías de reporte, conversor de Word).
+- **Agentes:** `plugins/<plugin>/agents/`. **Skills:** `plugins/<plugin>/skills/<nombre>/SKILL.md`.
+- Al cambiar algo, subí `version` en `plugins/<plugin>/.claude-plugin/plugin.json` y en `.claude-plugin/marketplace.json`. Los colegas actualizan con `/plugin marketplace update infant-becas`.
+
+Los datos de cada investigador quedan en su computadora, nunca en este repo.
